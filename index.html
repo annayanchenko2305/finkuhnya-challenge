@@ -242,7 +242,7 @@ footer{display:flex;align-items:center;justify-content:space-between;gap:12px;fl
 
   <section class="stats">
     <div class="stat"><b id="s-done">0</b><span>отмечено за месяц</span></div>
-    <div class="stat"><b id="s-run">0</b><span>подряд без трат</span></div>
+    <div class="stat"><b id="s-run">0</b><span>лучшая серия подряд</span></div>
     <div class="stat"><b id="s-month">1</b><span>месяц челленджа</span></div>
   </section>
 
@@ -368,7 +368,7 @@ function render(){
   const done = marks().length, {best, cur} = streaks(), g = goal();
   const dn = n => `${n}<small>дн.</small>`;
   document.getElementById("s-done").innerHTML = dn(done);
-  document.getElementById("s-run").innerHTML  = dn(cur);
+  document.getElementById("s-run").innerHTML  = dn(best);
   document.getElementById("s-month").textContent = monthNo();
   document.getElementById("g-val").textContent  = g;
 
